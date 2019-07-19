@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyx.project.mapper.ScheduleJobMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wyx.project.entity.ScheduleJob">
+        <id column="id" property="id" />
+        <result column="job_name" property="jobName" />
+        <result column="cron_expression" property="cronExpression" />
+        <result column="bean_name" property="beanName" />
+        <result column="method_name" property="methodName" />
+        <result column="status" property="status" />
+        <result column="delete_flag" property="deleteFlag" />
+        <result column="creator_id" property="creatorId" />
+        <result column="creator_name" property="creatorName" />
+        <result column="created_time" property="createdTime" />
+        <result column="updated_time" property="updatedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, job_name, cron_expression, bean_name, method_name, status, delete_flag, creator_id, creator_name, created_time, updated_time
+    </sql>
+
+</mapper>

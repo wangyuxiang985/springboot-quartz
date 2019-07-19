@@ -1,0 +1,50 @@
+base-package: com.wyx.project
+
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://######:3306/myjob?useUnicode=yes&characterEncoding=UTF8&useSSL=false&serverTimezone=CTT&allowMultiQueries=true
+    username: root
+    password: ######
+    hikari:
+      max-lifetime: 1765000
+      maximum-pool-size: 15
+  aop:
+    proxy-target-class: true
+    auto: true
+
+#mybatis-plus配置
+mybatis-plus:
+  global-config:
+    db-config:
+      field-strategy: not_empty
+      id-type: auto
+      db-type: mysql
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: ${base-package}.entity
+
+  swagger:
+      base-package: ${base-package}
+      contact:
+          email: wangyuxiang985@gmail.com
+          name: yuxiang
+          url: http://www.bestitdream.cn
+      description: 定时任务demo
+      #许可证
+      license: Apache License, Version 2.0
+      licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+      publish-config:
+          enabled: true
+          #server-url: http://swagger-server.wyp.dev.test.in/swaggerServer/publish
+          #默认本地不推送
+  #        server-url: http://10.231.34.148/swaggerServer/publish
+          #http://10.231.34.148/swagger-ui.html
+          #swagger-url: http://10.231.34.148/v2/api-docs
+      termsOfServiceUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+      title: 定时任务demo
+      version: 1.0.0
